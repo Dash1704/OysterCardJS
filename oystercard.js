@@ -25,6 +25,10 @@ inJourney(){
   return this.journey
 }
 
+tapIn(){
+  this.journey = true
+}
+
 }
 
 module.exports = OysterCard

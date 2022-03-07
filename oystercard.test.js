@@ -35,6 +35,15 @@ describe(OysterCard, () => {
     it('should not be in a journey bu default', () => {
       let card = new OysterCard
       expect(card.inJourney()).toEqual(false)
-    })
-  })
+    });
+  });
+
+  describe('tapIn', () => {
+    it('should change the inJourney state to true', () => {
+      let card = new OysterCard
+      card.tapIn()
+      expect(card.inJourney()).toEqual(true)
+    });
+  });
+
 });
