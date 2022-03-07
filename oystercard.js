@@ -3,6 +3,7 @@ class OysterCard {
 constructor(){
   this.balance = 0
   this.maxBalance = 90
+  this.journey = false
 }
 
 getBalance(){
@@ -18,6 +19,10 @@ topUp(money){
 
 deduct(fare){
   this.balance -= fare
+}
+
+inJourney(){
+  return this.journey
 }
 
 }

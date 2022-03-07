@@ -31,4 +31,10 @@ describe(OysterCard, () => {
     });
   });
 
+  describe('inJourney', () => {
+    it('should not be in a journey bu default', () => {
+      let card = new OysterCard
+      expect(card.inJourney()).toEqual(false)
+    })
+  })
 });
