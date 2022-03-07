@@ -21,5 +21,14 @@ describe(OysterCard, () => {
       expect(() => card.topUp(1)).toThrow('Max balance exceeded');
     });
   })
+ 
+  describe('deduct', () => {
+    it('should decut money from the card', () => {
+      let card = new OysterCard
+      card.topUp(5)
+      card.deduct(1)
+      expect(card.getBalance()).toEqual(4)
+    });
+  });
 
 });

@@ -16,6 +16,9 @@ topUp(money){
   else { throw 'Max balance exceeded'}
   }
 
+deduct(fare){
+  this.balance -= fare
+}
 
 }
 
