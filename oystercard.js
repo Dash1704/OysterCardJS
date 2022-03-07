@@ -2,6 +2,7 @@ class OysterCard {
 
 constructor(){
   this.balance = 0
+  this.maxBalance = 90
 }
 
 getBalance(){
@@ -9,8 +10,12 @@ getBalance(){
 }
 
 topUp(money){
-  this.balance += money
-}
+  if (this.balance < this.maxBalance){
+    this.balance += money
+  }
+  else { throw 'Max balance exceeded'}
+  }
+
 
 }
 

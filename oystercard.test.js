@@ -14,6 +14,12 @@ describe(OysterCard, () => {
       card.topUp(5)
       expect(card.getBalance()).toEqual(5)
     });
+    
+    it('should not allow the card to have more than £90', () => {
+      let card = new OysterCard
+      card.topUp(this.maxBalance)
+      expect(() => card.topUp(1)).toThrow('Max balance exceeded');
+    });
   })
 
 });
