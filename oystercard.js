@@ -29,6 +29,10 @@ tapIn(){
   this.journey = true
 }
 
+tapOut(){
+  this.journey = false
+}
+
 }
 
 module.exports = OysterCard

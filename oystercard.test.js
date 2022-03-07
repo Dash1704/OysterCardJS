@@ -46,4 +46,12 @@ describe(OysterCard, () => {
     });
   });
 
+  describe('tapOut', () => {
+    it('should change in journey to false', () => {
+      let card = new OysterCard
+      card.tapIn()
+      card.tapOut()  
+      expect(card.inJourney()).toEqual(false)
+    });
+  });
 });
