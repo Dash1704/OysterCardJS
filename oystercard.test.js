@@ -8,4 +8,12 @@ describe(OysterCard, () => {
     });
   });
 
+  describe('topUp', () => {
+    it('should allow a user to top up his card', () => {
+      let card = new OysterCard
+      card.topUp(5)
+      expect(card.getBalance()).toEqual(5)
+    });
+  })
+
 });

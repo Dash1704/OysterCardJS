@@ -8,6 +8,9 @@ getBalance(){
   return this.balance
 }
 
+topUp(money){
+  this.balance += money
+}
 
 }
 
