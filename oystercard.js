@@ -3,6 +3,7 @@ class OysterCard {
 constructor(){
   this.balance = 0
   this.maxBalance = 90
+  this.minBalance = 1
   this.journey = false
 }
 
@@ -26,7 +27,10 @@ inJourney(){
 }
 
 tapIn(){
-  this.journey = true
+  if (this.balance > this.minBalance){
+    this.journey = true
+  }
+  else { throw 'Not enough balance'}
 }
 
 tapOut(){
