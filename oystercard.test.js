@@ -77,7 +77,13 @@ describe(OysterCard, () => {
       expect(card.balance).toEqual(initialBalance - card.minBalance)
     });
 
-    // it('should forget the current journey')
+    it('should forget the current journey', () => {
+      const card = new OysterCard
+      card.topUp(5)
+      card.tapIn('Kings X')
+      card.tapOut()
+      expect(card.currentJourney).toEqual([])
+    });
   });
 });
 

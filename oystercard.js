@@ -38,6 +38,7 @@ tapIn(entryStation){
 tapOut(){
   this.deduct(this.minBalance)
   this.journey = false
+  this.currentJourney = []
 }
 
 }
