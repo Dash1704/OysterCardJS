@@ -50,6 +50,13 @@ describe(OysterCard, () => {
       const card = new OysterCard
       expect(() => card.tapIn()).toThrow('Not enough balance');
     });
+
+    it('should save the current entry station', () => {
+      const card = new OysterCard
+      card.topUp(5)
+      card.tapIn('Kings X')
+      expect(card.currentStation).toEqual(['Kings X'])
+    });
   });
 
   describe('tapOut', () => {

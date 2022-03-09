@@ -5,6 +5,7 @@ constructor(){
   this.maxBalance = 90
   this.minBalance = 1
   this.journey = false
+  this.currentStation = []
 }
 
 getBalance(){
@@ -26,9 +27,10 @@ inJourney(){
   return this.journey
 }
 
-tapIn(){
+tapIn(entryStation){
   if (this.balance > this.minBalance){
     this.journey = true
+    this.currentStation.push(entryStation)
   }
   else { throw 'Not enough balance'}
 }
