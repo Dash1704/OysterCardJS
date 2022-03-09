@@ -1,4 +1,3 @@
-
 {
   "name": "example-1",
   "version": "1.0.0",
@@ -13,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "esbuild": "^0.14.2",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "jest-change-matchers": "^1.0.1"
   }
 }

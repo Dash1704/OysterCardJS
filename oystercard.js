@@ -34,6 +34,7 @@ tapIn(){
 }
 
 tapOut(){
+  this.deduct(this.minBalance)
   this.journey = false
 }
 

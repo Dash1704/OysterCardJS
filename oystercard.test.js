@@ -60,5 +60,15 @@ describe(OysterCard, () => {
       card.tapOut()  
       expect(card.inJourney()).toEqual(false)
     });
+
+    it('should charge minimum fare from the balance', () => {
+      const card = new OysterCard
+      card.topUp(10)
+      card.tapIn()
+      const initialBalance = card.balance
+      card.tapOut()
+      expect(card.balance).toEqual(initialBalance - card.minBalance)
+    });
   });
 });
+
