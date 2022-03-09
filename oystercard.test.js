@@ -34,7 +34,7 @@ describe(OysterCard, () => {
   describe('tapIn', () => {
     it('should raise error message if below minim fare', () => {
       const card = new OysterCard
-      expect(() => card.tapIn()).toThrow('Not enough balance');
+      expect(() => card.tapIn()).toThrow('Not enough balance on Oystercard');
     });
 
     it('should save the current entry station', () => {
@@ -61,6 +61,13 @@ describe(OysterCard, () => {
       card.tapIn('Kings X')
       card.tapOut()
       expect(card.currentJourney).toEqual(['Not in journey'])
+    });
+  });
+
+  describe('journeyHistory', () => {
+    it('should return an empty hash', () => {
+      const card = new OysterCard
+      expect(card.getJourneyHistory()).toEqual({})
     });
   });
 });
