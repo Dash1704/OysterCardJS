@@ -4,7 +4,6 @@ constructor(){
   this.balance = 0
   this.maxBalance = 90
   this.minBalance = 1
-  this.journey = false
   this.currentJourney = []
 }
 
@@ -23,24 +22,17 @@ deduct(fare){
   this.balance -= fare
 }
 
-inJourney(){
-  return this.journey
-}
-
 tapIn(entryStation){
   if (this.balance > this.minBalance){
-    this.journey = true
-    this.currentJourney.push(entryStation)
+    this.currentJourney = [entryStation]
   }
   else { throw 'Not enough balance'}
 }
 
 tapOut(){
   this.deduct(this.minBalance)
-  this.journey = false
-  this.currentJourney = []
+  this.currentJourney = ['Not in journey']
 }
-
 }
 
 module.exports = OysterCard

@@ -31,21 +31,7 @@ describe(OysterCard, () => {
     });
   });
 
-  describe('inJourney', () => {
-    it('should not be in a journey bu default', () => {
-      const card = new OysterCard
-      expect(card.inJourney()).toEqual(false)
-    });
-  });
-
   describe('tapIn', () => {
-    it('should change the inJourney state to true', () => {
-      const card = new OysterCard
-      card.topUp(5)
-      card.tapIn()
-      expect(card.inJourney()).toEqual(true)
-    });
-    
     it('should raise error message if below minim fare', () => {
       const card = new OysterCard
       expect(() => card.tapIn()).toThrow('Not enough balance');
@@ -60,14 +46,6 @@ describe(OysterCard, () => {
   });
 
   describe('tapOut', () => {
-    it('should change in journey to false', () => {
-      const card = new OysterCard
-      card.topUp(5)
-      card.tapIn()
-      card.tapOut()  
-      expect(card.inJourney()).toEqual(false)
-    });
-
     it('should charge minimum fare from the balance', () => {
       const card = new OysterCard
       card.topUp(10)
@@ -82,7 +60,7 @@ describe(OysterCard, () => {
       card.topUp(5)
       card.tapIn('Kings X')
       card.tapOut()
-      expect(card.currentJourney).toEqual([])
+      expect(card.currentJourney).toEqual(['Not in journey'])
     });
   });
 });
