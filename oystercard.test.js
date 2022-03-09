@@ -20,6 +20,11 @@ describe(OysterCard, () => {
       card.topUp(card.maxBalance)
       expect(() => card.topUp(1)).toThrow('Max balance exceeded');
     });
+
+    it('should not let the card to top up more than the max balance', () => {
+      const card = new OysterCard
+      expect(() => card.topUp(card.maxBalance + 1)).toThrow('Max balance exceeded');
+    });
   })
  
   describe('deduct', () => {

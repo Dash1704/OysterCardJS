@@ -13,7 +13,7 @@ getBalance(){
 }
 
 topUp(money){
-  if (this.balance < this.maxBalance){
+  if (this.balance < this.maxBalance && money <= this.maxBalance){
     this.balance += money
   }
   else { throw 'Max balance exceeded'}
