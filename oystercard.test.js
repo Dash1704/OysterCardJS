@@ -64,15 +64,25 @@ describe(OysterCard, () => {
       const card = new OysterCard
       card.topUp(5)
       card.tapIn('Kings X')
-      card.tapOut()
+      card.tapOut('Waterloo')
       expect(card.currentJourney).toEqual(['Not in journey'])
     });
+
+    it('should add the entry journey to the journey history', () => {
+      const card = new OysterCard
+      card.topUp(5)
+      card.tapIn('Kings X')
+      card.tapOut('Waterloo')
+      expect(card.journeyHistory).toEqual(['Kings X', 'Waterloo'])
+    })
+
+
   });
 
   describe('journeyHistory', () => {
     it('should return an empty hash', () => {
       const card = new OysterCard
-      expect(card.getJourneyHistory()).toEqual({})
+      expect(card.getJourneyHistory()).toEqual([])
     });
   });
 });

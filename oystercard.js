@@ -4,8 +4,8 @@ constructor(){
   this.balance = 0
   this.maxBalance = 90
   this.minBalance = 1
-  this.currentJourney = []
-  this.journeyHistory = {}
+  this.currentJourney = 'Not in journey'
+  this.journeyHistory = []
 }
 
 getBalance(){
@@ -26,12 +26,14 @@ deduct(fare){
 tapIn(entryStation){
   if (this.balance > this.minBalance){
     this.currentJourney = [entryStation]
+    this.journeyHistory.push(entryStation)
   }
   else { throw 'Not enough balance on Oystercard'}
 }
 
-tapOut(){
+tapOut(exitStation){
   this.deduct(this.minBalance)
+  this.journeyHistory.push(exitStation)
   this.currentJourney = ['Not in journey']
 }
 
